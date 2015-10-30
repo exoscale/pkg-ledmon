@@ -1,3 +1,9 @@
+ledmon (0.79-3~precise0+exo1) precise; urgency=medium
+
+  * Backport for Precise.
+
+ -- Vincent Bernat <bernat@debian.org>  Fri, 30 Oct 2015 17:36:22 +0100
+
 ledmon (0.79-2) unstable; urgency=high
 
   * Fix for 3.13 kernel change (LP: #1349920)
