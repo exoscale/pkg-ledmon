@@ -1,0 +1,31 @@
+Description: mpt2sas can act just like isci
+
+When there is no enclosure, it's possible for mpt2sas to act just like
+isci. Do that only if we cannot use it as a generic HBA.
+
+Index: ledmon-0.79/src/cntrl.c
+===================================================================
+--- ledmon-0.79.orig/src/cntrl.c
++++ ledmon-0.79/src/cntrl.c
+@@ -123,7 +123,7 @@ static enum int_cntrl_type _get_type(con
+ 		type = CNTRL_TYPE_DELLSSD;
+ 	if (_is_scsi_cntrl(path))
+ 		type = CNTRL_TYPE_SCSI;
+-	if (_is_isci_cntrl(path))
++	else if (_is_isci_cntrl(path))
+ 		type = INT_CNTRL_TYPE_ISCI;
+ 	if (_is_ahci_cntrl(path))
+ 		type = CNTRL_TYPE_AHCI;
+Index: ledmon-0.79/src/sysfs.c
+===================================================================
+--- ledmon-0.79.orig/src/sysfs.c
++++ ledmon-0.79/src/sysfs.c
+@@ -724,7 +724,7 @@ int sysfs_isci_driver(const char *path)
+ 	str_cat(buf, "/driver", PATH_MAX);
+ 
+ 	link = realpath(buf, NULL);
+-	if (link && strstr(link, "/isci"))
++	if (link && (strstr(link, "/isci") || strstr(link, "/mpt2sas")))
+ 		found = 1;
+ 	free(link);
+ 	return found;

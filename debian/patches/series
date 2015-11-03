@@ -1,3 +1,4 @@
 ldflags-order.patch
 respect-external-CFLAGS-CPPFLAGS-LDFLAGS.patch
 sysfs-bool-values.patch
+mpt2sas-can-be-like-isci.patch

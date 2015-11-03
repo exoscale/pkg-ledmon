@@ -1,3 +1,9 @@
+ledmon (0.79-3~precise0+exo3) precise; urgency=medium
+
+  * Add a patch to make mpt2sas work as isci.
+
+ -- Vincent Bernat <bernat@debian.org>  Tue, 03 Nov 2015 11:58:47 +0100
+
 ledmon (0.79-3~precise0+exo2) precise; urgency=medium
 
   * Add debugging symbol package.
