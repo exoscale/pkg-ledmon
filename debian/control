@@ -22,3 +22,22 @@ Description: Enclosure LED Utilities
  .
  For backplane enclosures attached to ISCI controllers, support is limited to
  Intel(R) Intelligent Backplanes.
+
+Package: ledmon-dbg
+Section: debug
+Priority: extra
+Architecture: linux-any
+Depends: ledmon (= ${binary:Version}), ${misc:Depends}
+Description: Enclosure LED Utilities (debugging symbols)
+ ledmon and ledctl are userspace tools designed to control storage
+ enclosure LEDs. The user must have root privileges to use these tools.
+ .
+ These tools use the SGPIO and SES-2 protocols to monitor and control LEDs.
+ They been verified to work with Intel(R) storage controllers (i.e. the
+ Intel(R) AHCI controller) and have not been tested with storage controllers of
+ other vendors (especially SAS/SCSI controllers).
+ .
+ For backplane enclosures attached to ISCI controllers, support is limited to
+ Intel(R) Intelligent Backplanes.
+ .
+ This package contains the debugging symbols.

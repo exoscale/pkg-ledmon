@@ -1,13 +1,11 @@
 #!/usr/bin/make -f
 # -*- makefile -*-
 
-# Uncomment this to turn on verbose mode.
-export DH_VERBOSE=1
-export DH_OPTIONS=-v
+override_dh_auto_install:
+	dh_auto_install --destdir=debian/ledmon
 
-clean:
-	$(MAKE) mrproper
-	dh_clean
+override_dh_strip:
+	dh_strip --dbg-package=ledmon-dbg
 
 %:
-	dh $@ 
+	dh $@

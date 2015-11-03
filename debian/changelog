@@ -1,3 +1,9 @@
+ledmon (0.79-3~precise0+exo2) precise; urgency=medium
+
+  * Add debugging symbol package.
+
+ -- Vincent Bernat <bernat@debian.org>  Tue, 03 Nov 2015 10:06:18 +0100
+
 ledmon (0.79-3~precise0+exo1) precise; urgency=medium
 
   * Backport for Precise.
